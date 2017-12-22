@@ -11,7 +11,7 @@ body{margin:0;padding:0;background:#ffe;font-size:12px;overflow:auto}#mainDiv{wi
 body {
 	color: #FFF;
 	padding: 10px;
-	background: #FFF url(http://static.tieba.baidu.com/tb/cms/frs/bg/bg_105_wrap2.jpg) no-repeat fixed top center;
+	background: #FFF url(http://static.tieba.baidu.com/tb/cms/frs/bg/bg_105_wrap2.jpg) no-repeat fixed top -100px center;
 	margin-left: 0px;
 	margin-top: 0px;
 	margin-right: 0px;
