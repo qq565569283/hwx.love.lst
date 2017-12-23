@@ -82,17 +82,10 @@
 <!--Footer-->
 <footer>
 	<div class="zerogrid">
-	   <div class="col-1-3">
-			<div class="copyright">
-				<p>Designed and Developed by <a href="http://chengdazhi.com">Dominic</a> </p>
-			</div>
-	   </div>
-	   <div class="col-1-3">
+	   <div class="col-full">
 			<div class="back-to-top">
 				<a href="#">Back to top</a>
 			</div>
-	   </div>
-	   <div class="col-1-3">
 	   </div>
 	</div>
 </footer>
@@ -103,6 +96,7 @@
 <script>
 	var picNum=77;
 	var i=1;
+	var hPic=[];
 	var imgBehindHtml="<br/>"; 
 	$(function(){		
 		loadImg();		
@@ -112,12 +106,12 @@
 		var image = new Image();
 		image.src = "./images/small/pic ("+i+").png";
 		image.onload = function(){
-			if($("#notice")){
-				$("#notice").remove();
-			}
 			var w = image.width;
 			var h = image.height;
 			if(w>h){
+				if($("#notice")){
+					$("#notice").remove();
+				}
 				var imgFrontHtml = "<div id=\"pic ("+i+")\" class=\"col-1-2\">"+
 				   "<div class=\"wrap-col\">"+
 					"	<article>"+
@@ -135,36 +129,52 @@
 				  "</div>";
 				  $("#main-content").find(".row").append(imgFrontHtml);
 			}else{
-				imgBehindHtml += "<div id=\"pic ("+i+")\" class=\"col-1-2\">"+
-					   "<div class=\"wrap-col\">"+
-						"	<article>"+
-						"		<img class=\"full\" src=\"./images/small/pic ("+i+").png\">"+
-						"       <div class=\"wrap-content\"></div>"+
-						"	</article>"+
-						"</div>"+
-					  "</div>"+
-					  "<div id=\"notice\" class=\"col-full\">"+
-					   "<div class=\"wrap-col\">"+
-						"	<article>"+
-						"       <div class=\"wrap-content\" style=\"text-align:center\">正在加载图片请稍后</div>"+
-						"	</article>"+
-						"</div>"+
-					  "</div>";
+				hPic.push(i+"");
 			}
 			i++;
 			if(i<picNum+1){
 				loadImg();
 			}else{
-				imgBehindHtml += "<div id=\"notice\" class=\"col-full\">"+
-					   "<div class=\"wrap-col\">"+
-						"	<article>"+
-						"       <div class=\"wrap-content\" style=\"text-align:center\">图片加载完成</div>"+
-						"	</article>"+
-						"</div>"+
-					  "</div>";
-				$("#main-content").find(".row").append(imgBehindHtml);
+				loadHImg();
 			}
 		}		
+	}
+	
+	function loadHImg(){
+		$.each(hPic,function(){
+			if($("#notice")){
+				$("#notice").remove();
+			}
+			var imgFrontHtml = "<div id=\"pic ("+this+")\" class=\"col-1-2\">"+
+				   "<div class=\"wrap-col\">"+
+					"	<article>"+
+					"		<img class=\"full\" src=\"./images/small/pic ("+this+").png\">"+
+					"       <div class=\"wrap-content\"></div>"+
+					"	</article>"+
+					"</div>"+
+				  "</div>"+
+				  "<div id=\"notice\" class=\"col-full\">"+
+				   "<div class=\"wrap-col\">"+
+					"	<article>"+
+					"       <div class=\"wrap-content\" style=\"text-align:center\">正在加载图片请稍后</div>"+
+					"	</article>"+
+					"</div>"+
+				  "</div>";
+			$("#main-content").find(".row").append(imgFrontHtml);
+		})
+		if($("#notice")){
+			$("#notice").remove();
+			var imgFrontHtml =
+				  "<div id=\"notice\" class=\"col-full\">"+
+				   "<div class=\"wrap-col\">"+
+					"	<article>"+
+					"       <div class=\"wrap-content\" style=\"text-align:center\">图片加载完成</div>"+
+					"	</article>"+
+					"</div>"+
+				  "</div>";
+			$("#main-content").find(".row").append(imgFrontHtml);
+		}
+		
 	}
 </script>
 
