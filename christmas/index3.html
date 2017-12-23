@@ -74,6 +74,15 @@
 							</article>
 						</div>
 					</div>-->
+					<div class="col-full" id="noticeDv">
+						<div class="wrap-col">
+							<article class="blue">
+								<div id="noticeContent" class="wrap-content">
+									图片正在加载,请稍后...
+								</div>
+							</article>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>		
@@ -109,9 +118,6 @@
 			var w = image.width;
 			var h = image.height;
 			if(w>h){
-				if($("#notice")){
-					$("#notice").remove();
-				}
 				var imgFrontHtml = "<div id=\"pic ("+i+")\" class=\"col-1-2\">"+
 				   "<div class=\"wrap-col\">"+
 					"	<article>"+
@@ -119,15 +125,8 @@
 					"       <div class=\"wrap-content\"></div>"+
 					"	</article>"+
 					"</div>"+
-				  "</div>"+
-				  "<div id=\"notice\" class=\"col-full\">"+
-				   "<div class=\"wrap-col\">"+
-					"	<article>"+
-					"       <div class=\"wrap-content\" style=\"text-align:center\">正在加载图片请稍后</div>"+
-					"	</article>"+
-					"</div>"+
 				  "</div>";
-				  $("#main-content").find(".row").append(imgFrontHtml);
+				  $("#main-content").find(".row").preappend(imgFrontHtml);
 			}else{
 				hPic.push(i+"");
 			}
@@ -142,9 +141,6 @@
 	
 	function loadHImg(){
 		$.each(hPic,function(){
-			if($("#notice")){
-				$("#notice").remove();
-			}
 			var imgFrontHtml = "<div id=\"pic ("+this+")\" class=\"col-1-2\">"+
 				   "<div class=\"wrap-col\">"+
 					"	<article>"+
@@ -152,27 +148,14 @@
 					"       <div class=\"wrap-content\"></div>"+
 					"	</article>"+
 					"</div>"+
-				  "</div>"+
-				  "<div id=\"notice\" class=\"col-full\">"+
-				   "<div class=\"wrap-col\">"+
-					"	<article>"+
-					"       <div class=\"wrap-content\" style=\"text-align:center\">正在加载图片请稍后</div>"+
-					"	</article>"+
-					"</div>"+
 				  "</div>";
-			$("#main-content").find(".row").append(imgFrontHtml);
+			if($("#notice")){
+				$("#notice").remove();
+			}
+			$("#main-content").find(".row").preappend(imgFrontHtml);
 		})
-		if($("#notice")){
-			$("#notice").remove();
-			var imgFrontHtml =
-				  "<div id=\"notice\" class=\"col-full\">"+
-				   "<div class=\"wrap-col\">"+
-					"	<article>"+
-					"       <div class=\"wrap-content\" style=\"text-align:center\">图片加载完成</div>"+
-					"	</article>"+
-					"</div>"+
-				  "</div>";
-			$("#main-content").find(".row").append(imgFrontHtml);
+		if($("#noticeContent")){
+			$("#noticeContent").text("图片加载完毕！");
 		}
 		
 	}
