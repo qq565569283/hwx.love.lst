@@ -18,10 +18,6 @@
     
     <!-- CSS
   ================================================== -->
-  	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/component.css">
-	<link rel="stylesheet" href="css/responsive.css">
 	
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
@@ -74,13 +70,11 @@
 							</article>
 						</div>
 					</div>-->
-					<div class="col-full" id="noticeDv">
+					<div class="col-full" id="noticeDiv">
 						<div class="wrap-col">
-							<article class="blue">
-								<div id="noticeContent" class="wrap-content">
+								<div id="noticeContent" style="text-align:center" class="wrap-content">
 									图片正在加载,请稍后...
 								</div>
-							</article>
 						</div>
 					</div>
 				</div>
@@ -100,7 +94,6 @@
 </footer>
 
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/navigation.js"></script>
 <script>
 	var picNum=77;
@@ -126,7 +119,7 @@
 					"	</article>"+
 					"</div>"+
 				  "</div>";
-				  $("#main-content").find(".row").prepend(imgFrontHtml);
+				  $("#noticeDiv").before(imgFrontHtml);
 			}else{
 				hPic.push(i+"");
 			}
@@ -149,10 +142,7 @@
 					"	</article>"+
 					"</div>"+
 				  "</div>";
-			if($("#notice")){
-				$("#notice").remove();
-			}
-			$("#main-content").find(".row").prepend(imgFrontHtml);
+			$("#noticeDiv").before(imgFrontHtml);
 		})
 		if($("#noticeContent")){
 			$("#noticeContent").text("图片加载完毕！");
