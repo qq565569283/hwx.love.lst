@@ -8,6 +8,17 @@
 <title>一周年快乐</title>
 <script type="text/javascript" src="./jscss/jquery.min.js"></script>
 <script>
+	document.addEventListener('DOMContentLoaded', function () {    
+		function audioAutoPlay() {        
+			var audio = document.getElementById('bg-music');            
+			audio.play();        
+			document.addEventListener("WeixinJSBridgeReady", function () {            
+				audio.play();        
+			}, false);    
+		}    
+		audioAutoPlay();
+	});
+
 	$(function(){
 		$("#indexContent").load("./index1.html")		
 	})
@@ -17,9 +28,9 @@
 
 <body>
 <div id="mp3" style="display:none">
-	<video controls autoplay name="media">
+	<audio  style="display:none; height: 0"  id="bg-music"  preload="auto"  loop="loop" name="media">
 		<source src="./music/20060803163622945.mp3" type="audio/mpeg">
-	</video>
+	</audio >
 </div>
 <div id="indexContent">
 
