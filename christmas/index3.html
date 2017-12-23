@@ -126,7 +126,7 @@
 					"	</article>"+
 					"</div>"+
 				  "</div>";
-				  $("#main-content").find(".row").preappend(imgFrontHtml);
+				  $("#main-content").find(".row").prepend(imgFrontHtml);
 			}else{
 				hPic.push(i+"");
 			}
@@ -152,7 +152,7 @@
 			if($("#notice")){
 				$("#notice").remove();
 			}
-			$("#main-content").find(".row").preappend(imgFrontHtml);
+			$("#main-content").find(".row").prepend(imgFrontHtml);
 		})
 		if($("#noticeContent")){
 			$("#noticeContent").text("图片加载完毕！");
