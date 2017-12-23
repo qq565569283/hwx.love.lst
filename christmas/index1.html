@@ -56,6 +56,7 @@ div {
 	border-radius: 5px;
 }
 </style>
+<script type="text/javascript" src="./jscss/jquery.min.js"></script>
 <script>
 // if(localStorage["index"]=="1"){
 // 	window.location="index2.html";
@@ -67,7 +68,7 @@ $(document).ready(function(e) {
 	t=2;
 	$("#t-"+t).fadeIn();
 	
-	$(document).click(
+	$("#step1Next").click(
 	function(){
 		/*如果用户点击了，就取消自动播放*/
 		//clearInterval(timer);
@@ -167,8 +168,8 @@ $(document).ready(function(e) {
 	</div>
 
 	
-	<div align="center" class="tishi">
-		<span class="tishiContent">轻触屏幕继续</span>
+	<div align="center" id="step1Next" class="tishi">
+		<span class="tishiContent">点击继续</span>
 	</div>
 
 
