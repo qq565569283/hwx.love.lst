@@ -238,7 +238,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/navigation.js"></script>
 <script>
-	var picNum=71;
+	var picNum=77;
 	var i=1;
 	var imgBehindHtml="<br/>"; 
 	$(function(){		
@@ -247,7 +247,7 @@
 	
 	function loadImg(){
 		var image = new Image();
-		image.src = "./images/small2/pic ("+i+").png";
+		image.src = "./images/small/pic ("+i+").png";
 		image.onload = function(){
 			var w = image.width;
 			var h = image.height;
@@ -255,7 +255,7 @@
 				var imgFrontHtml = "<div id=\"pic ("+i+")\" class=\"col-1-2\">"+
 				   "<div class=\"wrap-col\">"+
 					"	<article>"+
-					"		<img class=\"full\" src=\"./images/small2/pic ("+i+").png\">"+
+					"		<img class=\"full\" src=\"./images/small/pic ("+i+").png\">"+
 					"       <div class=\"wrap-content\"></div>"+
 					"	</article>"+
 					"</div>"+
@@ -265,7 +265,7 @@
 				imgBehindHtml += "<div id=\"pic ("+i+")\" class=\"col-1-2\">"+
 					   "<div class=\"wrap-col\">"+
 						"	<article>"+
-						"		<img class=\"full\" src=\"./images/small2/pic ("+i+").png\">"+
+						"		<img class=\"full\" src=\"./images/small/pic ("+i+").png\">"+
 						"       <div class=\"wrap-content\"></div>"+
 						"	</article>"+
 						"</div>"+
