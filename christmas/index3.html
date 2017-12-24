@@ -109,6 +109,7 @@
 	})
 	
 	function loadImg(){
+		if(i!=42 && i!=69){
 		var image = new Image();
 		image.src = "./images/small/pic ("+i+").png";
 		image.onload = function(){
@@ -133,7 +134,7 @@
 			}else{
 				loadHImg();
 			}
-		}		
+		}}		
 	}
 	
 	function loadHImg(){
