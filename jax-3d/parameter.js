@@ -37,7 +37,7 @@ let
     liElemDegY = 0,
 
     // li 元素的最大个数
-    liElemMaxNum = 25,
+    liElemMaxNum = 26,
 
     // li 元素 水平、垂直铺放的最大个数
     liElemRowMaxNum = 4,

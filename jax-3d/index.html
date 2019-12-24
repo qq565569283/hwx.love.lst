@@ -133,8 +133,8 @@
             let arr = [...Array(liElemMaxNum+8).keys()];
             $('#box li').each(i =>{
                 let idx = randomFrom(0,arr.length-1);
-                let liElemDegY = 1*i;
-                let liElemDegX = 2*i;
+                let liElemDegY = 4*i;
+                let liElemDegX = 8*i;
 
                 $('#box li').eq(arr[idx]).css({
                     "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${liElemDepDefault}px)`,
@@ -162,15 +162,16 @@
         }
 
         // 生成span
-        generateLiSpan = (value,id) =>{
+        generateLiSpan = (value,idStr) =>{
             // 创建一个li 元素
             liElem = $('<li></li>');
             liElem.css('height','150px');
             liElem.css('width','100px');
-            let idx = randomFrom(0,data.length-1);
+            liElem.css('font-size','40px');
+
 
             // 创建一个span 元素
-            spanElem = $(`<span id="${id}">${value}</span>`);
+            spanElem = $(`<span id="${idStr}">${value}</span>`);
             liElem.append(spanElem);
 
             // 设置span 中的文本颜色
@@ -196,6 +197,7 @@
                 spanElem.css('color',`rgb(${randomFrom(100,255)},${randomFrom(100,255)},${randomFrom(100,255)})`);
                 spanElem.css('width','100%');
                 spanElem.css('height','100%');
+                spanElem.css('ondragstart','return false;');
 
                 // 将已创建的li 元素添加至容器中
                 $('#box').append(liElem);
@@ -220,16 +222,36 @@
             $('#box li').hover(function(){
                 $(this).css('border','1px solid rgba(125,255,255,0.75)');
                 $(this).css('boxShadow','0 0 15px rgba(0,255,255,0.75)');
-                $(this).css('transition','0s');
             },function(){
                 $(this).css('border','1px solid rgba(125,255,255,0.25)');
                 $(this).css('boxShadow','0 0 15px rgba(0,255,255,0.5)');
-                $(this).css('transition','0s');
+            })
+            // 鼠标移入移出效果
+            $('#box li img').hover(function(){
+                $(this).css('width','300%');
+                $(this).css('height','300%');
+                $(this).css('transition','1s');
+            },function(){
+                $(this).css('width','100%');
+                $(this).css('height','100%');
+                $(this).css('transition','1s');
+            })
+            // 鼠标移入移出效果
+            $('#box li span').hover(function(){
+                $(this).css('font-size','200px');
+                $(this).css('width','200%');
+                $(this).css('height','200%');
+                $(this).css('transition','1s');
+            },function(){
+                $(this).css('font-size','40px');
+                $(this).css('width','100%');
+                $(this).css('height','100%');
+                $(this).css('transition','1s');
             })
 
             // 鼠标点击，切换布局
             $('#box li').click(function(){
-                switch($(this).text()){
+                switch($(this).children().attr('id')){
                     case '方格': gridLayout(); break;
                     case '螺旋': helixLayout(); break;
                     case '三体': threeLayout(); break;

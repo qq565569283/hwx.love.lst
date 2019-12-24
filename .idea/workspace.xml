@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d78644d-4add-4b39-944a-11f9e4c1de61" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/jax-3d/img/26.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jax-3d/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jax-3d/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jax-3d/parameter.js" beforeDir="false" afterPath="$PROJECT_DIR$/jax-3d/parameter.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jax-3d/img" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -26,6 +28,7 @@
       <recent name="E:\workspace\jaxlove.github.io\jax-3d" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\jaxlove.github.io\jax-3d\img" />
       <recent name="E:\workspace\web-3d\img" />
     </key>
   </component>
@@ -53,7 +56,7 @@
       <updated>1577096237595</updated>
       <workItem from="1577096238762" duration="2651000" />
       <workItem from="1577148452992" duration="3826000" />
-      <workItem from="1577157045220" duration="2146000" />
+      <workItem from="1577157045220" duration="7896000" />
     </task>
     <servers />
   </component>
