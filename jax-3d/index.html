@@ -1,596 +1,357 @@
-<<<<<<< HEAD
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!-- saved from url=(0027)http://itzoo.info/love.html -->
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Love</title>
-        
-        <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
-        <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-parser.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-jit.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-builderbase.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-async.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-async-powerpack.min.js"></script>
-        <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
-
-    </head>
-    <body>
-<<<<<<< Updated upstream
-        大家好，我是徐驰！
-=======
-        <div id="main">
-            <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
-            <div id="wrap">
-               <div id="text">
-                    <div id="code">                 
-                    <span class="say">我的爱人，我会牵着你的手，走到满头白发的那一天，</span><br>
-                    <span class="say">我会守护你生命里的精彩，并陪伴你一路精彩下去。</span><br>
-                    <span class="say">你的幸福快乐，是我一生的追求。</span><br>
-                    <span class="say">我会每一天带着笑脸，和你说早安，</span><br>
-                     <span class="say">我会每一晚与你道声晚安再入梦乡，</span><br>
-                    <span class="say">我会带你去所有你想去的地方，</span><br>
-                    <span class="say">陪你闹看你笑</span><br>
-                    <span class="say">历经你生命中所有的点点滴滴。</span><br>
-                    <span class="say">我期待这一生与你一起走过，</span><br>
-                    <span class="say">我期待与你慢慢变老</span><br>
-                    <span class="say">等我们老到哪儿也去不了，</span><br>
-                    <span class="say">还能满载着一生的幸福快乐 ！</span><br>
-                    <br>
-                    <span class="say">我会为我们的未来撑起一片天空，</span><br>
-                     <span class="say">为我们的将来担负起一生的责任，</span><br>
-                      <span class="say">愿意为你去做每一件能让你开心快乐的事。</span><br>
-                       <span class="say">所有我们经历的点点滴滴，</span><br>
-                        <span class="say">都是我们一辈子最美的回忆。</span><br>
-                         <span class="say">我愿意爱你直到老去！</span><br>
-                   <br>
-                    <span class="say"><span class="space"></span> -- Yours, wuxia2001.</span>
-                    </div>
-                </div>
-                <div id="clock-box">
-                    <a href="http://blog.csdn.net/wuxia2001" target="_blank">@wuxia2001</a> 与 <a href="http://blog.csdn.net/wuxia2001" target="_blank">@张爱夏</a> 在一起的
-                        <div id="clock"></div>
-                </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            <audio src="love.mp3" autoplay="autoplay"></audio>
-        </div>
-    
-    <script>
-    </script>
-
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;
-        }
-
-        var width = canvas.width();
-        var height = canvas.height();
-        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
-
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
-
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            // 会有闪烁不得意这样做, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date();
-            together.setFullYear(2010, 5, 8);
-            together.setHours(20);
-            together.setMinutes(20);
-            together.setSeconds(0);
-            together.setMilliseconds(0);
-
-            $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-    </script>
-
-
-
->>>>>>> Stashed changes
-</body></html>
-=======
 <!DOCTYPE html>
 <html lang='en' onselectstart='return false'>
 <head>
-<meta charset='utf-8' />
-<link type="text/css" rel="styleSheet" href="base.css" />
+    <meta charset='utf-8' />
+    <link type="text/css" rel="styleSheet" href="base.css" />
 
 </head>
 <body>
 <div class="wrap">
-  <ul id="box"></ul>
+    <ul id="box"></ul>
 
-  <div class="mask">
-    <div class="bg-mask"></div>
-  </div>
+    <div class="mask">
+        <div class="bg-mask"></div>
+    </div>
 </div>
 <script src='jquery-2.2.4.js'></script>
 <script src='parameter.js'></script>
 <script>
 
-// 开启一个独立的空间避免全局变量污染
-(function(){
+    // 开启一个独立的空间避免全局变量污染
+    (function(){
 
-// 文本内容
-  data = ['方格','螺旋','随机','球形','三体','几何','曲线','Random'];
-  imgData = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14',
-    '15','16','17','18','19','20','21','22','23','24','25'];
+        // 文本内容
+        data = ['方格','螺旋','随机','球形','三体','几何','曲线','Random'];
+        imgData = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25']
 
-  // 指定一个区间，获取一个随机数
-  randomFrom = (lowerValue,upperValue) =>{
-    return Math.floor(Math.random()*(upperValue-lowerValue+1)+lowerValue);
-  }
+        // 指定一个区间，获取一个随机数
+        randomFrom = (lowerValue,upperValue) =>{
+            return Math.floor(Math.random()*(upperValue-lowerValue+1)+lowerValue);
+        }
 
-  // 方格
-  gridLayout = _ =>{
-    let arr = [...Array(liElemMaxNum+8).keys()];
-    debugger
-    $('#box li').each(i =>{
-      // 数组的索引
-      let idx = randomFrom(0,arr.length-1);
+        // 方阵
+        gridLayout = _ =>{
+            let arr = [...Array(liElemMaxNum+8).keys()];
+            $('#box li').each(i =>{
+                debugger
+                // 数组的索引
+                let idx = randomFrom(0,arr.length-1);
 
-      // 计算li 元素 水平、垂直、纵深方向的偏移位
-      offsetStepX = ((i%aScreenNum)%liElemRowMaxNum)*liElemOffsetX;
-      offsetStepY = parseInt((i%aScreenNum)/liElemColMaxNum)*liElemOffsetY;
-      offsetStepZ = parseInt(i/aScreenNum)*liElemOffsetZ;
+                // 计算li 元素 水平、垂直、纵深方向的偏移位
+                offsetStepX = ((i%aScreenNum)%liElemRowMaxNum)*liElemOffsetX;
+                offsetStepY = parseInt((i%aScreenNum)/liElemColMaxNum)*liElemOffsetY;
+                offsetStepZ = parseInt(i/aScreenNum)*liElemOffsetZ;
 
-      // 计算当前li 元素的坐标值
-      liElemCoordX = liElemFristSiteX+offsetStepX;
-      liElemCoordY = liElemFristSiteY+offsetStepY;
-      liElemCoordZ = liElemFristSiteZ+offsetStepZ;
+                // 计算当前li 元素的坐标值
+                liElemCoordX = liElemFristSiteX+offsetStepX;
+                liElemCoordY = liElemFristSiteY+offsetStepY;
+                liElemCoordZ = liElemFristSiteZ+offsetStepZ;
 
-      $('#box li').eq(arr[idx]).css({
-        "transform":`translate3d(${liElemCoordX}px,${liElemCoordY}px,${liElemCoordZ}px)`,
-        "transition": "4s ease-in-out"
-      })
+                $('#box li').eq(arr[idx]).css({
+                    "transform":`translate3d(${liElemCoordX}px,${liElemCoordY}px,${liElemCoordZ}px)`,
+                    "transition": "4s ease-in-out"
+                })
 
-      // 删除数组中的值
-      arr.splice(idx,1);
-    }); currentStyle = gridLayout;
-  }
+                // 删除数组中的值
+                arr.splice(idx,1);
+            }); currentStyle = gridLayout;
+        }
 
-  // 螺旋
-  helixLayout = _ =>{
-    let arr = [...Array(liElemMaxNum+8).keys()];
-    $('#box li').each(i =>{
-      let idx = randomFrom(0,arr.length-1);
-      let liElemDegY = 10*i;
-      let liElemDepY = -10*parseInt(liElemMaxNum+8/2)+10*i;
+        // 螺旋
+        helixLayout = _ =>{
+            let arr = [...Array(liElemMaxNum+8).keys()];
+            $('#box li').each(i =>{
+                let idx = randomFrom(0,arr.length-1);
+                let liElemDegY = 10*i;
+                let liElemDepY = -10*parseInt(liElemMaxNum+8/2)+10*i;
 
-      $('#box li').eq(arr[idx]).css({
-        "transform":`rotateY(${liElemDegY}deg) translateY(${liElemDepY}px) translateZ(${Math.abs(liElemDepDefault)}px)`,
-        "transition": "4s ease-in-out"
-      })
+                $('#box li').eq(arr[idx]).css({
+                    "transform":`rotateY(${liElemDegY}deg) translateY(${liElemDepY}px) translateZ(${Math.abs(liElemDepDefault)}px)`,
+                    "transition": "4s ease-in-out"
+                })
 
-      // 删除数组中的值
-      arr.splice(idx,1)
-    }); currentStyle = helixLayout;
-  }
+                // 删除数组中的值
+                arr.splice(idx,1)
+            }); currentStyle = helixLayout;
+        }
 
-  // 球形
-  sphereLayout = _ =>{
-    let arr = [...Array(liElemMaxNum+8).keys()];
-    $('#box li').each(i =>{
-      let idx = randomFrom(0,arr.length-1);
-      let liElemDegY = 3*i;
-      let liElemDegX = 30*i;
+        // 球形
+        sphereLayout = _ =>{
+            let arr = [...Array(liElemMaxNum+8).keys()];
+            $('#box li').each(i =>{
+                let idx = randomFrom(0,arr.length-1);
+                let liElemDegY = 3*i;
+                let liElemDegX = 30*i;
 
-      $('#box li').eq(arr[idx]).css({
-        "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${Math.abs(liElemDepDefault)}px)`,
-        "transition": "4s ease-in-out"
-      })
+                $('#box li').eq(arr[idx]).css({
+                    "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${Math.abs(liElemDepDefault)}px)`,
+                    "transition": "4s ease-in-out"
+                })
 
-      // 删除数组中的值
-      arr.splice(idx,1)
-    }); currentStyle = sphereLayout;
-  }
+                // 删除数组中的值
+                arr.splice(idx,1)
+            }); currentStyle = sphereLayout;
+        }
 
-  // 三体
-  threeLayout = _ =>{
-    let arr = [...Array(liElemMaxNum+8).keys()];
-    $('#box li').each(i =>{
-      let idx = randomFrom(0,arr.length-1);
-      let liElemDegY = 3*i;
-      let liElemDegX = 60*i;
+        // 三体
+        threeLayout = _ =>{
+            let arr = [...Array(liElemMaxNum+8).keys()];
+            $('#box li').each(i =>{
+                let idx = randomFrom(0,arr.length-1);
+                let liElemDegY = 3*i;
+                let liElemDegX = 60*i;
 
-      $('#box li').eq(arr[idx]).css({
-        "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${Math.abs(liElemDepDefault)}px)`,
-        "transition": "4s ease-in-out"
-      })
+                $('#box li').eq(arr[idx]).css({
+                    "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${Math.abs(liElemDepDefault)}px)`,
+                    "transition": "4s ease-in-out"
+                })
 
-      // 删除数组中的值
-      arr.splice(idx,1)
-    }); currentStyle = threeLayout;
-  }
+                // 删除数组中的值
+                arr.splice(idx,1)
+            }); currentStyle = threeLayout;
+        }
 
-  // 几何
-  geomeLayout = _ =>{
-    let arr = [...Array(liElemMaxNum+8).keys()];
-    $('#box li').each(i =>{
-      let idx = randomFrom(0,arr.length-1);
-      let liElemDegY = 8.9*i;
-      let liElemDegX = 2.9*i;
+        // 几何
+        geomeLayout = _ =>{
+            let arr = [...Array(liElemMaxNum+8).keys()];
+            $('#box li').each(i =>{
+                let idx = randomFrom(0,arr.length-1);
+                let liElemDegY = 8.9*i;
+                let liElemDegX = 2.9*i;
 
-      $('#box li').eq(arr[idx]).css({
-        "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${Math.abs(liElemDepDefault)}px)`,
-        "transition": "4s ease-in-out"
-      })
+                $('#box li').eq(arr[idx]).css({
+                    "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${Math.abs(liElemDepDefault)}px)`,
+                    "transition": "4s ease-in-out"
+                })
 
-      // 删除数组中的值
-      arr.splice(idx,1)
-    }); currentStyle = geomeLayout;
-  }
+                // 删除数组中的值
+                arr.splice(idx,1)
+            }); currentStyle = geomeLayout;
+        }
 
-  // 曲线
-  curveLayout = _ =>{
-    let arr = [...Array(liElemMaxNum+8).keys()];
-    $('#box li').each(i =>{
-      let idx = randomFrom(0,arr.length-1);
-      let liElemDegY = 1*i;
-      let liElemDegX = 2*i;
+        // 曲线
+        curveLayout = _ =>{
+            let arr = [...Array(liElemMaxNum+8).keys()];
+            $('#box li').each(i =>{
+                let idx = randomFrom(0,arr.length-1);
+                let liElemDegY = 1*i;
+                let liElemDegX = 2*i;
 
-      $('#box li').eq(arr[idx]).css({
-        "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${liElemDepDefault}px)`,
-        "transition": "4s ease-in-out"
-      })
+                $('#box li').eq(arr[idx]).css({
+                    "transform":`rotateY(${liElemDegY}deg) rotateX(${liElemDegX}deg) translateZ(${liElemDepDefault}px)`,
+                    "transition": "4s ease-in-out"
+                })
 
-      // 删除数组中的值
-      arr.splice(idx,1)
-    }); currentStyle = curveLayout;
-  }
+                // 删除数组中的值
+                arr.splice(idx,1)
+            }); currentStyle = curveLayout;
+        }
 
-  // 随机
-  chaoticLayout = _ =>{
-    $('#box li').each(function(i){
-      // 随机生成li 元素的坐标点
-      liElemCoordX = (Math.random()-0.5)*3000;
-      liElemCoordY = (Math.random()-0.5)*3000;
-      liElemCoordZ = (Math.random()-0.5)*3000;
+        // 随机
+        chaoticLayout = _ =>{
+            $('#box li').each(function(i){
+                // 随机生成li 元素的坐标点
+                liElemCoordX = (Math.random()-0.5)*3000;
+                liElemCoordY = (Math.random()-0.5)*3000;
+                liElemCoordZ = (Math.random()-0.5)*3000;
 
-      $(this).css({
-        "transform":`translate3d(${liElemCoordX}px,${liElemCoordY}px,${liElemCoordZ}px)`,
-        "transition": "4s ease-in-out"
-      })
-    }); currentStyle = chaoticLayout;
-  }
+                $(this).css({
+                    "transform":`translate3d(${liElemCoordX}px,${liElemCoordY}px,${liElemCoordZ}px)`,
+                    "transition": "4s ease-in-out"
+                })
+            }); currentStyle = chaoticLayout;
+        }
 
-  //生成Li里的span元素
-  generateLiSpan = (value,style) => {
-    // 创建一个li 元素
-    liElem = $('<li></li>');
-    liElem.css('border-radius',"10px");
+        // 生成span
+        generateLiSpan = (value,id) =>{
+            // 创建一个li 元素
+            liElem = $('<li></li>');
+            liElem.css('height','150px');
+            liElem.css('width','100px');
+            let idx = randomFrom(0,data.length-1);
 
-    // 创建一个span 元素
-    spanElem = $(`<span id="${style}">${value}</span>`);
-    liElem.append(spanElem);
+            // 创建一个span 元素
+            spanElem = $(`<span id="${id}">${value}</span>`);
+            liElem.append(spanElem);
 
-    // 设置span 中的文本颜色
-    spanElem.css('color',`rgb(${randomFrom(100,255)},${randomFrom(100,255)},${randomFrom(100,255)})`);
-    spanElem.css('size','80%');
-    spanElem.css('draggable',"false");
-    spanElem.css('-webkit-user-drag',"none");
-    spanElem.css('transition',"hover 0.6s");
-    spanElem.css('border-radius',"10px");
+            // 设置span 中的文本颜色
+            spanElem.css('color',`rgb(${randomFrom(100,255)},${randomFrom(100,255)},${randomFrom(100,255)})`);
 
-    // 将已创建的li 元素添加至容器中
-    $('#box').append(liElem);
-  }
+            // 将已创建的li 元素添加至容器中
+            $('#box').append(liElem);
+        }
 
-  function main(){
-    $([...Array(liElemMaxNum).keys()]).each(i =>{
-      // 创建一个li 元素
-      liElem = $('<li></li>');
-      liElem.css('border-radius',"10px");
-      let idx = randomFrom(0,data.length-1);
-      let imgId = randomFrom(0,imgData.length-1);
+        function main(){
+            $([...Array(liElemMaxNum).keys()]).each(i =>{
+                // 创建一个li 元素
+                liElem = $('<li></li>');
+                liElem.css('height','150px');
+                liElem.css('width','100px');
+                let idx = randomFrom(0,data.length-1);
+                let imgId = randomFrom(1,imgData.length);
 
-      // 创建一个span 元素
-      imgElem = $(`<img id="${data[idx]}" src="img/${imgData[imgId]}.jpg"></img>`);
-      liElem.append(imgElem);
+                // 创建一个span 元素
+                spanElem = $(`<img id="${data[idx]}" src="img/${imgId}.jpg"></img>`);
+                liElem.append(spanElem);
 
-      // 设置span 中的文本颜色
-      imgElem.css('color',`rgb(${randomFrom(100,255)},${randomFrom(100,255)},${randomFrom(100,255)})`);
-      imgElem.css('height','100%');
-      imgElem.css('width','100%');
-      imgElem.css('draggable',"false");
-      imgElem.css('-webkit-user-drag',"none");
-      imgElem.css('transition',"hover 0.6s");
-      imgElem.css('border-radius',"10px");
+                // 设置span 中的文本颜色
+                spanElem.css('color',`rgb(${randomFrom(100,255)},${randomFrom(100,255)},${randomFrom(100,255)})`);
+                spanElem.css('width','100%');
+                spanElem.css('height','100%');
 
-      // 将已创建的li 元素添加至容器中
-      $('#box').append(liElem);
-    })
+                // 将已创建的li 元素添加至容器中
+                $('#box').append(liElem);
+            })
 
-    for (let i = 0; i < 1; i++) {
-      generateLiSpan("汪","几何")
-      generateLiSpan("德","曲线")
-      generateLiSpan("军","三体")
-      generateLiSpan("Love","随机")
-      generateLiSpan("Love","随机")
-      generateLiSpan("张","方格")
-      generateLiSpan("爱","螺旋")
-      generateLiSpan("夏","球形")
-
-    }
-
-    // 布局类型
-    layoutStyle = [gridLayout, helixLayout, chaoticLayout, sphereLayout,
-    threeLayout, geomeLayout, curveLayout];
-
-    // 鼠标移入移出效果
-    $('#box li img , #box li span').hover(function(){
-      $(this).css('border','1px solid rgba(125,255,255,0.75)');
-      $(this).css('boxShadow','0 0 15px rgba(0,255,255,0.75)');
-      $(this).css('transition','0s');
-      $(this).css('height','200%');
-      $(this).css('width','200%');
-    },function(){
-      $(this).css('border','1px solid rgba(125,255,255,0.25)');
-      $(this).css('boxShadow','0 0 15px rgba(0,255,255,0.5)');
-      $(this).css('height','100%');
-      $(this).css('width','100%');
-    })
-
-    // 鼠标点击，切换布局
-    $('#box li img ,#box li span').click(function(){
-      switch($(this).attr('id')){
-        case '方格': gridLayout(); break;
-        case '螺旋': helixLayout(); break;
-        case '三体': threeLayout(); break;
-        case '几何': geomeLayout(); break;
-        case '曲线': curveLayout(); break;
-        case '球形': sphereLayout(); break;
-        case '随机': chaoticLayout(); break;
-
-        default:
-          while(true){
-            idx = randomFrom(0,layoutStyle.length-1);
-            if(layoutStyle[idx] != currentStyle){
-              return layoutStyle[idx]();
+            for (let i = 0; i < 1; i++) {
+                generateLiSpan("汪","方格")
+                generateLiSpan("德","螺旋")
+                generateLiSpan("军","随机")
+                generateLiSpan("Love","三体")
+                generateLiSpan("Love","三体")
+                generateLiSpan("张","几何")
+                generateLiSpan("爱","曲线")
+                generateLiSpan("夏","球形")
             }
-          }
-          break;
-      }
-    })
 
-    // 鼠标拖动与滚轮效果
-    $(document).mousedown(function(event){
-      event = event || window.event;
+            // 布局类型
+            layoutStyle = [gridLayout, helixLayout, chaoticLayout, sphereLayout,
+                threeLayout, geomeLayout, curveLayout];
 
-      // 上一个点的X、Y坐标
-      oldCoordX = event.clientX;
-      oldCoordY = event.clientY;
+            // 鼠标移入移出效果
+            $('#box li').hover(function(){
+                $(this).css('border','1px solid rgba(125,255,255,0.75)');
+                $(this).css('boxShadow','0 0 15px rgba(0,255,255,0.75)');
+                $(this).css('transition','0s');
+            },function(){
+                $(this).css('border','1px solid rgba(125,255,255,0.25)');
+                $(this).css('boxShadow','0 0 15px rgba(0,255,255,0.5)');
+                $(this).css('transition','0s');
+            })
 
-      $(this).on('mousemove',event =>{
-        event = event || window.event;
+            // 鼠标点击，切换布局
+            $('#box li').click(function(){
+                switch($(this).text()){
+                    case '方格': gridLayout(); break;
+                    case '螺旋': helixLayout(); break;
+                    case '三体': threeLayout(); break;
+                    case '几何': geomeLayout(); break;
+                    case '曲线': curveLayout(); break;
+                    case '球形': sphereLayout(); break;
+                    case '随机': chaoticLayout(); break;
 
-        // 若上一个定时器存在，则将其删除
-        timer && clearInterval(timer);
+                    default:
+                        while(true){
+                            idx = randomFrom(0,layoutStyle.length-1);
+                            if(layoutStyle[idx] != currentStyle){
+                                return layoutStyle[idx]();
+                            }
+                        }
+                        break;
+                }
+            })
 
-        // 当前点的X、Y坐标
-        nowCoordX = event.clientX;
-        nowCoordY = event.clientY;
+            // 鼠标拖动与滚轮效果
+            $(document).mousedown(function(event){
+                event = event || window.event;
 
-        // 计算机X、Y差值
-        minusX = nowCoordX - oldCoordX;
-        minusY = nowCoordY - oldCoordY;
+                // 上一个点的X、Y坐标
+                oldCoordX = event.clientX;
+                oldCoordY = event.clientY;
 
-        // 更新上一个点的X、Y坐标值
-        oldCoordX = nowCoordX;
-        oldCoordY = nowCoordY;
+                $(this).on('mousemove',event =>{
+                    event = event || window.event;
 
-        // 计算X、Y轴的移动度数
-        liElemDegX -= minusY*0.1;
-        liElemDegY += minusX*0.1;
+                    // 若上一个定时器存在，则将其删除
+                    timer && clearInterval(timer);
 
-        $('#box').css({
-          "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
-        })
+                    // 当前点的X、Y坐标
+                    nowCoordX = event.clientX;
+                    nowCoordY = event.clientY;
+
+                    // 计算机X、Y差值
+                    minusX = nowCoordX - oldCoordX;
+                    minusY = nowCoordY - oldCoordY;
+
+                    // 更新上一个点的X、Y坐标值
+                    oldCoordX = nowCoordX;
+                    oldCoordY = nowCoordY;
+
+                    // 计算X、Y轴的移动度数
+                    liElemDegX -= minusY*0.1;
+                    liElemDegY += minusX*0.1;
+
+                    $('#box').css({
+                        "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
+                    })
 
 
-      }).mouseup(_ =>{
-        // 当鼠标弹起解除移动
-        $(document).off('mousemove');
+                }).mouseup(_ =>{
+                    // 当鼠标弹起解除移动
+                    $(document).off('mousemove');
 
-        // 若上一个定时器存在，则将其删除
-        timer && clearInterval(timer);
+                    // 若上一个定时器存在，则将其删除
+                    timer && clearInterval(timer);
 
-        // 鼠标弹起后有缓动效果
-        timer = setInterval(_ => {
-          // 缓动差值
-          minusX *= 0.95;
-          minusY *= 0.95;
+                    // 鼠标弹起后有缓动效果
+                    timer = setInterval(_ => {
+                        // 缓动差值
+                        minusX *= 0.95;
+                        minusY *= 0.95;
 
-          // 计算X、Y轴的移动度数
-          liElemDegX -= minusY*0.1;
-          liElemDegY += minusX*0.1;
+                        // 计算X、Y轴的移动度数
+                        liElemDegX -= minusY*0.1;
+                        liElemDegY += minusX*0.1;
 
-          // 当差值超出指定范围时，则清除定时器
-          Math.abs(minusX)<0.05
-          && Math.abs(minusY)<0.05
-          && clearInterval(timer);
+                        // 当差值超出指定范围时，则清除定时器
+                        Math.abs(minusX)<0.05
+                        && Math.abs(minusY)<0.05
+                        && clearInterval(timer);
 
-          $('#box').css({
-            "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
-          })
-        }, 12);
-      })
+                        $('#box').css({
+                            "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
+                        })
+                    }, 12);
+                })
 
-    }).on('mousewheel DOMMouseScroll',e =>{
-        // 若上一个定时器存在，则将其删除
-        timer && clearInterval(timer);
+            }).on('mousewheel DOMMouseScroll',e =>{
+                // 若上一个定时器存在，则将其删除
+                timer && clearInterval(timer);
 
-        // 获取鼠标滚动方向
-        let step = (e.originalEvent.wheelDelta
-        && (e.originalEvent.wheelDelta >0?1:-1))
-        || (e.originalEvent.detail && (e.originalEvent.detail >0?-1:1));
+                // 获取鼠标滚动方向
+                let step = (e.originalEvent.wheelDelta
+                    && (e.originalEvent.wheelDelta >0?1:-1))
+                    || (e.originalEvent.detail && (e.originalEvent.detail >0?-1:1));
 
-        // 计算滚轮滚动时Z 轴景深的步长
-        liElemDepZ = depDefault += step*90;
+                // 计算滚轮滚动时Z 轴景深的步长
+                liElemDepZ = depDefault += step*90;
 
-        $('#box').css({
-          "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
-        })
+                $('#box').css({
+                    "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
+                })
 
-        // 设置缓动效果
-        timer = setInterval(_ => {
-          // 缓动步长
-          step *= 0.6;
-          liElemDepZ += step*80;
+                // 设置缓动效果
+                timer = setInterval(_ => {
+                    // 缓动步长
+                    step *= 0.6;
+                    liElemDepZ += step*80;
 
-          Math.abs(step) < 0.000005
-          && clearInterval(timer);
+                    Math.abs(step) < 0.000005
+                    && clearInterval(timer);
 
-          $('#box').css({
-            "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
-          })
-        }, 12);
-      })
+                    $('#box').css({
+                        "transform":`translateZ(${liElemDepZ}px) rotateX(${liElemDegX}deg) rotateY(${liElemDegY}deg)`
+                    })
+                }, 12);
+            })
 
-    // 加载布局
-    setTimeout(gridLayout,1000);
-  }
+            // 加载布局
+            setTimeout(gridLayout,1000);
+        }
 
-  main();
+        main();
 
-})();
+    })();
 </script>
 </body>
 </html>
->>>>>>> 3周年
