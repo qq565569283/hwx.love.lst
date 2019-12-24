@@ -187,10 +187,9 @@
                 liElem.css('height','150px');
                 liElem.css('width','100px');
                 let idx = randomFrom(0,data.length-1);
-                let imgId = randomFrom(1,imgData.length);
 
                 // 创建一个span 元素
-                spanElem = $(`<img id="${data[idx]}" src="img/${imgId}.jpg"></img>`);
+                spanElem = $(`<img id="${data[idx]}" src="img/${i+1}.jpg"></img>`);
                 liElem.append(spanElem);
 
                 // 设置span 中的文本颜色

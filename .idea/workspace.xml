@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d78644d-4add-4b39-944a-11f9e4c1de61" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/jax-3d/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jax-3d/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jax-3d/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +53,7 @@
       <updated>1577096237595</updated>
       <workItem from="1577096238762" duration="2651000" />
       <workItem from="1577148452992" duration="3826000" />
-      <workItem from="1577157045220" duration="1793000" />
+      <workItem from="1577157045220" duration="2146000" />
     </task>
     <servers />
   </component>
