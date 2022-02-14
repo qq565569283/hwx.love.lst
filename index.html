@@ -14,15 +14,16 @@
         <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
         <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
 
+    
     </head>
-    <body>
+    <body  >
         <!-- <embed height="50" width="100"   src="./Love_files/钢琴先森 - 亲密爱人.mp3" autoplay="autoplay" >  -->
-            <center><audio src="./Love_files/love122_01.mp3"    autoplay loop >  您的浏览器不支持 audio 标签 </audio></center>
-
+            <center><audio src="./Love_files/解宁 - 有点甜 (钢琴版伴奏).mp3"    autoplay="autoplay"  loop="loop" id="autios" type="audio/mp3" >  您的浏览器不支持 audio 标签 </audio></center>
+            <!-- <audio src="./Love_files/love.mp3" controls="controls" autoplay="autoplay"></audio> -->
  
-<pcenter>
+<pcenter  >
        <center> <p >大家好，我是黄伟雄！</p></center>
-        <div id="main">
+        <div id="main" >
           
             
             <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
@@ -50,7 +51,10 @@
                          <span class="say">我愿意爱你直到老去！</span><br>
                    <br>
                     <span class="say"><span class="space"></span> -- Yours, 黄伟雄.</span>
+                   <span> <img src="./_$7]6MI1L)M`R]SW[9R6(EH.gif" alt="" width="50"></span>
+
                     </div>
+                   
                 </div>
                 <div id="clock-box">
                     <a >黄伟雄</a> 与 <a >林舒婷</a> 在一起的
@@ -61,6 +65,9 @@
         </div>
 
     <script>
+        document.addEventListener('clock',function(){
+            document.getElementById('audios').play()
+        })
     </script>
 
     <script>
